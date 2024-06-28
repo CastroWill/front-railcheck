@@ -9,31 +9,20 @@ export default function Ativos({ navigation }){
       <VStack flex={1} alignItems="flex-start" p={5}>
       <Titulo>Ativos</Titulo>
         <Box w="100%" borderRadius="lg" p={3} mt={5} shadow="1" borderRightRadius="md">
-          <Botao mt={3} mb={3} onPress={() => navigation.navigate('CadastroAtivos')}>
+          <Botao mt={3} mb={3} onPress={() => navigation.navigate('ListarTodosAtivos')}>
+            Listar todos os Ativos
+          </Botao>
+          <Botao mt={3} mb={3} onPress={() => navigation.navigate('BuscarAtivo')}>
+            Buscar Ativo por ID
+          </Botao>
+          <Botao mt={3} mb={3} onPress={() => navigation.navigate('CriarAtivos')}>
             Criar Ativo
           </Botao>
-          <Botao mt={3} mb={3} onPress={() => navigation.navigate('ListarAtivos')}>
-            Listar Ativo
-          </Botao>
-          <Botao mt={3} mb={3} onPress={() => navigation.navigate('AtualizarAtivos')}>
-            Atualizar Ativo
-          </Botao>
-          <Botao mt={3} mb={3} onPress={() => navigation.navigate('RemoverAtivos')}>
-            Remover Ativo
+          <Botao mt={3} mb={3} onPress={() => navigation.navigate('ModificarAtivos')}>
+            Modificar Ativo
           </Botao>
         </Box>
-        <Divider mt={5} alignSelf={"center"}/>
-      </VStack>
-      
-      <VStack flex={1} w="100%" alignItems="flex-start" bgColor="white">
-        <Box w="100%" borderRadius="lg" p={3} borderRightRadius="md"> 
-          <Card 
-            nome="Trem 14"
-            // descricao="Falha de Freio"
-          />  
-          
-        </Box>
-      </VStack>      
+      </VStack>     
     </ScrollView>
   )
 }

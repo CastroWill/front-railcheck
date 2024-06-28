@@ -1,7 +1,0 @@
-import { Text } from "native-base"
-
-
-export default function RemoverAtivos(){
-    return(
-        <Text>Tela de Remoção</Text>
-    )}

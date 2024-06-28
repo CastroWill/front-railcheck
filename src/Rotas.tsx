@@ -8,10 +8,10 @@ import Cadastro from "./Cadastro";
 import Login from "./Login"
 import Tabs from "./Tabs";
 
-import CadastroAtivos from "./crudAtivos/cadastroAtivos";
-import ListarAtivos from "./crudAtivos/listarAtivos";
-import AtualizarAtivos from "./crudAtivos/atualizarAtivos";
-import RemoverAtivos from "./crudAtivos/removerAtivos";
+import BuscarAtivo from "./crudAtivos/buscarAtivos";
+import ListarTodosAtivos from "./crudAtivos/listarTodosAtivos";
+import CriarAtivos from "./crudAtivos/criarAtivos";
+import ModificarAtivos from "./crudAtivos/modificarAtivos";
 
 import ListarTodasOS from "./crudOS/listarTodasOS";
 import BuscarOS from "./crudOS/buscarOS";
@@ -34,22 +34,22 @@ export default function Rotas(){
 
 
                 <Tab.Screen 
-                    name="CadastroAtivos" component={CadastroAtivos} options={{headerShown: false}}
+                    name="ListarTodosAtivos" component={ListarTodosAtivos} options={{headerShown: false}}
                 />
                 <Tab.Screen 
-                    name="ListarAtivos" component={ListarAtivos} options={{headerShown: false}}
+                    name="BuscarAtivo" component={BuscarAtivo} options={{headerShown: false}}
                 />
                 <Tab.Screen 
-                    name="AtualizarAtivos" component={AtualizarAtivos} options={{headerShown: false}}
+                    name="CriarAtivos" component={CriarAtivos} options={{headerShown: false}}
                 />
                 <Tab.Screen 
-                    name="RemoverAtivos" component={RemoverAtivos} options={{headerShown: false}}
+                    name="ModificarAtivos" component={ModificarAtivos} options={{headerShown: false}}
                 />
 
 
 
                 <Tab.Screen 
-                    name="CadastroOS" component={ListarTodasOS} options={{headerShown: false}}
+                    name="ListarTodasOS" component={ListarTodasOS} options={{headerShown: false}}
                 />
                 <Tab.Screen 
                     name="BuscarOS" component={BuscarOS} options={{headerShown: false}}

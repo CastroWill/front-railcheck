@@ -29,6 +29,7 @@ export default function Login({ navigation }) {
         <EntradaTexto 
           label = "Senha"
           placeholder="Insira sua senha"
+          secureTextEntry
         >
         </EntradaTexto>
 
