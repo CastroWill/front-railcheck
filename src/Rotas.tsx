@@ -13,10 +13,10 @@ import ListarAtivos from "./crudAtivos/listarAtivos";
 import AtualizarAtivos from "./crudAtivos/atualizarAtivos";
 import RemoverAtivos from "./crudAtivos/removerAtivos";
 
-import CadastroOS from "./crudOS/cadastroOS";
-import ListarOS from "./crudOS/listarOS";
-import AtualizarOS from "./crudOS/atualizarOS";
-import RemoverOS from "./crudOS/removerOS";
+import ListarTodasOS from "./crudOS/listarTodasOS";
+import BuscarOS from "./crudOS/buscarOS";
+import CriarOS from "./crudOS/criarOS";
+import ModificarOS from "./crudOS/modificarOS";
 
 export default function Rotas(){
     return(
@@ -49,16 +49,16 @@ export default function Rotas(){
 
 
                 <Tab.Screen 
-                    name="CadastroOS" component={CadastroOS} options={{headerShown: false}}
+                    name="CadastroOS" component={ListarTodasOS} options={{headerShown: false}}
                 />
                 <Tab.Screen 
-                    name="ListarOS" component={ListarOS} options={{headerShown: false}}
+                    name="BuscarOS" component={BuscarOS} options={{headerShown: false}}
                 />
                 <Tab.Screen 
-                    name="AtualizarOS" component={AtualizarOS} options={{headerShown: false}}
+                    name="CriarOS" component={CriarOS} options={{headerShown: false}}
                 />
                 <Tab.Screen 
-                    name="RemoverOS" component={RemoverOS} options={{headerShown: false}}
+                    name="ModificarOS" component={ModificarOS} options={{headerShown: false}}
                 />
 
             </Tab.Navigator>

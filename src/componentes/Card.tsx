@@ -7,6 +7,7 @@ interface CardProps {
     descricao?: string;
     data?: string;
     ehGrave?: boolean;
+    icon?: string;
 }
 
 
@@ -14,20 +15,21 @@ export function Card({
     nome,
     descricao,
     data,
-    ehGrave
+    ehGrave,
+    icon = "subway-outline"
 }: CardProps){
     return(
-        <VStack w="100%" bg={ehGrave ? 'red.300': 'white'} p={5} 
-        borderRadius={"lg"} shadow={2} mb={5}>
+        <VStack w="100%" bg={ehGrave ? 'red.300': 'gray.100'} p={5} 
+        borderRadius={"lg"} shadow={5} mb={5}>
             <VStack flexDir={"row"}>
-                <Ionicons name={"subway-outline"} size={55} />
+                <Ionicons name={icon} size={55} />
                 <VStack pl={4}>
                     <Text fontSize={"lg"} bold >{nome}</Text>
                     <Text fontSize={"md"}>{descricao}</Text>
                     <Text>{data}</Text>
                 </VStack>
             </VStack>
-            <Botao mt={0}>
+            <Botao mt={1}>
                 Ver detalhes
             </Botao>
         </VStack>
