@@ -1,7 +1,15 @@
 import { VStack, Text, ScrollView, Avatar, Divider } from "native-base"
 import { Titulo } from "../componentes/Titulo"
+import { Botao } from "../componentes/Botao"
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
-export default function Perfil(){
+export default function Perfil({navigation} : any){
+    function deslogar(){
+        AsyncStorage.removeItem('token')
+        AsyncStorage.removeItem('usuarioId')
+        navigation.replace('Login')
+    }
+
     return(
         <ScrollView flex={1}>
             <VStack flex={1} alignItems={"center"} p={5}>
@@ -14,10 +22,8 @@ export default function Perfil(){
                 <Text>São Paulo-SP</Text>
                 <Text>Técnico de manutenção</Text>
                 <Divider mt={5}/>
+                <Botao onPress={deslogar}>Deslogar</Botao>
 
-                {/* <Titulo color={"blue.500"} mb={1}>Histórico médico</Titulo>
-                <Text>Bronquite</Text>
-                <Text>Sinusite</Text> */}
             </VStack>
         </ScrollView>
     )
