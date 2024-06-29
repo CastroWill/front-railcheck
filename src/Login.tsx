@@ -88,7 +88,7 @@ export default function Login({ navigation }) {
       <Botao onPress={login}>Entrar</Botao>
 
       <Link 
-        href='https://www.alura.com.br' mt={2}
+        href='https://www.google.com.br' mt={2}
       >
         Esqueceu sua senha?
       </Link>
