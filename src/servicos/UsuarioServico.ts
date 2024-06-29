@@ -13,3 +13,14 @@ export async function cadastrarUsuario(usuario: Usuario){
         return null;
     }
 }
+
+export async function pegarDadosUsuario(id: string){
+    try{
+        const resultado = await api.get(`/paciente/${id}`)
+        return resultado.data
+    }
+    catch(error){
+        console.log(error)
+        return null
+    }
+}
