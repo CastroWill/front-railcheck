@@ -18,6 +18,7 @@ export function Card({
     ehGrave,
     icon = "subway-outline"
 }: CardProps){
+    if(!nome) return null;
     return(
         <VStack w="100%" bg={ehGrave ? 'red.300': 'gray.100'} p={5} 
         borderRadius={"lg"} shadow={5} mb={5}>

@@ -19,6 +19,5 @@ export default function CriarOS(){
                 <Botao>Criar</Botao>
                 <Botao mt={4}>Cancelar</Botao>               
             </VStack>
-            
         </ScrollView>
     )}

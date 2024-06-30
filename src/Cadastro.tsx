@@ -7,7 +7,7 @@ import { useState } from "react";
 import { secoes } from "./utils.ts/CadastroEntradaTexto";
 import { cadastrarUsuario } from "./servicos/UsuarioServico";
 
-export default function Cadastro() {
+export default function Cadastro({navigation}) {
   const [numSecao, setNumSecao] = useState(0);
   const [dados, setDados] = useState({} as any)
   const toast = useToast() 
@@ -18,7 +18,8 @@ export default function Cadastro() {
     }
     else{
       console.log(dados)
-      //cadastrar()
+      cadastrar()
+      navigation.replace('Login')
     }
   }
 
