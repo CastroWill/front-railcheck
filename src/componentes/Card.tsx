@@ -8,11 +8,13 @@ interface CardProps {
     data?: string;
     ehGrave?: boolean;
     icon?: string;
+    status?: string;
 }
 
 
 export function Card({
     nome,
+    status,
     descricao,
     data,
     ehGrave,
@@ -26,8 +28,10 @@ export function Card({
                 <Ionicons name={icon} size={55} />
                 <VStack pl={4}>
                     <Text fontSize={"lg"} bold >{nome}</Text>
-                    <Text fontSize={"md"}>{descricao}</Text>
+                    <Text>{status}</Text>
                     <Text>{data}</Text>
+                    <Text fontSize={"md"}>{descricao}</Text>
+                    
                 </VStack>
             </VStack>
             <Botao mt={1}>

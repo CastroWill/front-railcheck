@@ -4,7 +4,7 @@ import { Titulo } from "./componentes/Titulo";
 import { EntradaTexto } from "./componentes/EntradaTexto";
 import { Botao } from "./componentes/Botao";
 import { useState } from "react";
-import { secoes } from "./utils.ts/CadastroEntradaTexto";
+import { secoes } from "./utils/CadastroUsuarioEntradaTexto";
 import { cadastrarUsuario } from "./servicos/UsuarioServico";
 
 export default function Cadastro({navigation}) {
@@ -12,21 +12,9 @@ export default function Cadastro({navigation}) {
   const [dados, setDados] = useState({} as any)
   const toast = useToast() 
 
-  function avancarSecao() {
-    if(numSecao < secoes.length - 1){
-      setNumSecao(numSecao+1)
-    }
-    else{
-      console.log(dados)
-      cadastrar()
-      navigation.replace('Login')
-    }
-  }
-
-  function voltarSecao() {
-    if(numSecao > 0){
-      setNumSecao(numSecao-1)
-    }
+  function finalizarCadastro(){
+    cadastrar()
+    navigation.navigate('Tabs')
   }
 
   function atualizarDados(id: string, valor: string){
@@ -81,10 +69,11 @@ export default function Cadastro({navigation}) {
         }
       </Box>
 
-      {numSecao> 0 && <Botao onPress={() => voltarSecao()} 
-      bgColor="gray.400">Voltar</Botao>} 
+      {/*Redenderização condicional de componente*/}
+      {/* {numSecao> 0 && <Botao onPress={() => voltarSecao()} 
+      bgColor="gray.400">Voltar</Botao>}  */}
 
-      <Botao onPress={() => avancarSecao()} mt={4} mb={20}>Cadastrar</Botao>
+      <Botao onPress={() => finalizarCadastro()} mt={4} mb={20}>Cadastrar</Botao>
 
 
     </ScrollView>

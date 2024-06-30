@@ -20,7 +20,6 @@ export default function BuscarOS_ID(){
             console.log(resultadoBusca);
         }
     }
-
     
     return(
         <ScrollView bgColor="white">

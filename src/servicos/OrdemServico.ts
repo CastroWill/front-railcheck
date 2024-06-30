@@ -1,3 +1,4 @@
+import { OrdemServico } from "../interfaces/ordensServico"
 import api from "./api"
 
 
@@ -13,11 +14,22 @@ export async function buscaOrdemPorId(id: string){
     }
 }
 
-
-//Mudar a rota para o endpoint das ordens de serviço
 export async function buscaTodasOrdens(){
     try{
         const resultado = await api.get('/rota')
+        return resultado.data
+    }
+    catch(error){
+        console.log(error)
+        return null
+    }
+}
+
+export async function cadastrarOrdem(ordemDeServico: OrdemServico){
+    try{
+        if(!ordemDeServico) return null
+        const resultado = await api.post('/rota')
+        console.log (resultado.data)
         return resultado.data
     }
     catch(error){

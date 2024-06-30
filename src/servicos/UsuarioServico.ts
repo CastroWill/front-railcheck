@@ -4,7 +4,7 @@ import { Usuario } from "../interfaces/usuario";
 export async function cadastrarUsuario(usuario: Usuario){
     if(!usuario) return null;
     try{
-        const resultado = await api.post('/paciente', usuario)
+        const resultado = await api.post('/rota', usuario)
         console.log (resultado.data)
         return resultado.data
     }
@@ -16,7 +16,7 @@ export async function cadastrarUsuario(usuario: Usuario){
 
 export async function pegarDadosUsuario(id: string){
     try{
-        const resultado = await api.get(`/paciente/${id}`)
+        const resultado = await api.get(`/rota/${id}`)
         return resultado.data
     }
     catch(error){

@@ -27,8 +27,9 @@ export default function ListarTodasOS(){
                 <VStack flex={1} w="100%" alignItems="flex-start" bgColor="white" key={index}>
                     <Card 
                         nome={ordensServico.nome}
-                        descricao={ordensServico.descricao}
+                        status={ordensServico.status}
                         data={ordensServico.data}
+                        descricao={ordensServico.descricao}
                     />
                 </VStack>
             ))}
