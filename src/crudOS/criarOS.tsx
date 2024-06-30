@@ -20,9 +20,16 @@ export default function CriarOS({navigation}) {
 
   async function cadastrar() {
     const resultado = await cadastrarOrdem({
-      data: dados.data,
-      status: dados.status,
-      descricao: dados.descricao
+      id: 10,
+      descricao: dados.descricao,
+      dataCriacao: "2024-06-28T00:00:00",
+      dataAlteracao: "2024-06-28T00:00:00",
+      dataConclusao: "2024-06-28T00:00:00",
+      prioridade: "BAIXA",
+      status: "PENDENTE",
+      ativoId: 1,
+      usuarioCriadorId: 1,
+      usuarioResponsavelId: 1
     })
     if (resultado) {
       toast.show({

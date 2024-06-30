@@ -3,7 +3,7 @@ import api from "./api"
 export async function fazerLogin(email: string, senha: string){
     if(!email || !senha) return null
     try{
-        const resultado = await api.post('auth/login', {
+        const resultado = await api.post('/user-service/user/login', {
             email,
             senha
         })

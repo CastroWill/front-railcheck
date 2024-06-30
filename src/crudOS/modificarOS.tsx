@@ -7,7 +7,7 @@ import { buscaOrdemPorId, modificaOrdemPorId } from "../servicos/OrdemServico"
 import { OrdemServico } from "../interfaces/ordensServico"
 
 
-export default function ModificarOS(){
+export default function ModificarOS({navigation}){
     const [idBusca, setIdBusca] = useState ('')
     const [resultadoBusca, setResultadoBusca] = useState({} as OrdemServico)
     const [data, setData] = useState('')
@@ -26,15 +26,23 @@ export default function ModificarOS(){
     
     async function modificar() {
         const resultado = await modificaOrdemPorId(idBusca, {
-          data: data,
+          id: parseInt(idBusca),
+          descricao: descricao,
+          dataCriacao: "2024-06-28T00:00:00",
+          dataAlteracao: "2024-06-28T00:00:00",
+          dataConclusao: "2024-06-28T00:00:00",
+          prioridade: "BAIXA",
           status: status,
-          descricao: descricao
+          ativoId: 1,
+          usuarioCriadorId: 1,
+          usuarioResponsavelId: 1
         })
         if (resultado) {
           toast.show({
             title: 'Ordem alterada com sucesso',
             backgroundColor: 'green.500',
           })
+          navigation.navigate('Tabs')
         }
         else {
           toast.show({
@@ -49,21 +57,20 @@ export default function ModificarOS(){
         <ScrollView bgColor="white">
             <Titulo>Busca OS por ID</Titulo>
             <VStack flex={1} w="100%" alignItems="flex-start"  p={3}>
-                <EntradaTexto 
-                    label="ID" 
-                    placeholder="Digite o ID da OS"
-                    value={idBusca}
-                    onChangeText={setIdBusca}
-                />
-                <Botao onPress={buscar}>Buscar</Botao>
-                <Divider mt={5} />
+              <EntradaTexto 
+                  label="ID" 
+                  placeholder="Digite o ID da OS"
+                  value={idBusca}
+                  onChangeText={setIdBusca}
+              />
+              <Botao onPress={buscar}>Buscar</Botao>
+              <Divider mt={5} />
             </VStack>
             <VStack flex={1} w="100%" alignItems="flex-start"  p={3}>
-                {resultadoBusca &&  <EntradaTexto label="Data" placeholder={resultadoBusca.data} value={data} onChangeText={setData} />}
-                {resultadoBusca &&  <EntradaTexto label="Status" placeholder={resultadoBusca.status} value={status} onChangeText={setStatus} />}
-                {resultadoBusca &&  <EntradaTexto label="Descrição" placeholder={resultadoBusca.descricao} value={descricao} onChangeText={setDescricao} />}  
-
-                <Botao onPress={modificar}>Cadastrar</Botao>
+            <EntradaTexto label="Data" placeholder={resultadoBusca.dataCriacao} value={data} onChangeText={setData} />
+            <EntradaTexto label="Status" placeholder={resultadoBusca.status} value={status} onChangeText={setStatus} />
+            <EntradaTexto label="Descrição" placeholder={resultadoBusca.descricao} value={descricao} onChangeText={setDescricao}/> 
+            <Botao onPress={modificar}>Atualizar</Botao>
             </VStack>
         </ScrollView>       
     )}

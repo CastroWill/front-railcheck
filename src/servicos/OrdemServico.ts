@@ -5,7 +5,7 @@ import api from "./api"
 //Mudar a rota para o endpoint das ordens de serviço
 export async function buscaOrdemPorId(id: string){
     try{
-        const resultado = await api.get(`/rota/${id}`)
+        const resultado = await api.get(`/os-service/os/${id}/`)
         return resultado.data
     }
     catch(error){
@@ -16,7 +16,7 @@ export async function buscaOrdemPorId(id: string){
 
 export async function buscaTodasOrdens(){
     try{
-        const resultado = await api.get('/rota')
+        const resultado = await api.get('/os-service/os')
         return resultado.data
     }
     catch(error){
@@ -26,9 +26,10 @@ export async function buscaTodasOrdens(){
 }
 
 export async function cadastrarOrdem(ordemDeServico: OrdemServico){
+    console.log(ordemDeServico)
     try{
         if(!ordemDeServico) return null
-        const resultado = await api.post('/rota')
+        const resultado = await api.post('/os-service/os', ordemDeServico)
         console.log (resultado.data)
         return resultado.data
     }
@@ -39,9 +40,11 @@ export async function cadastrarOrdem(ordemDeServico: OrdemServico){
 }
 
 export async function modificaOrdemPorId(id: string, ordemDeServico: OrdemServico){
+    console.log('entrou')
     try{
         if(!ordemDeServico) return null
-        const resultado = await api.put(`/rota/${id}`)
+        console.log(ordemDeServico)
+        const resultado = await api.put('/os-service/os', ordemDeServico)
         console.log (resultado.data)
         return resultado.data
     }

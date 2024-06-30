@@ -11,6 +11,7 @@ export default function ListarTodasOS(){
     useEffect(() => {
         async function buscar(){
             const resultado = await buscaTodasOrdens()
+            console.log(resultado)
             if(resultado){
                 setResultadoBusca(resultado)
             }
@@ -26,10 +27,9 @@ export default function ListarTodasOS(){
             {resultadoBusca?.map((ordensServico: OrdemServico, index) => (
                 <VStack flex={1} w="100%" alignItems="flex-start" bgColor="white" key={index}>
                     <Card 
-                        nome={ordensServico.nome}
-                        status={ordensServico.status}
-                        data={ordensServico.data}
                         descricao={ordensServico.descricao}
+                        status={ordensServico.status}
+                        data={ordensServico.dataCriacao}
                     />
                 </VStack>
             ))}

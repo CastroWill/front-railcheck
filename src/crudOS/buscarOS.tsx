@@ -34,10 +34,10 @@ export default function BuscarOS_ID(){
                 <Botao onPress={buscar}>Buscar</Botao>
                 <Divider mt={5} />
             </VStack>
+
             <Card 
-                nome={resultadoBusca.nome}
                 descricao={resultadoBusca.descricao}
-                data={resultadoBusca.data}
+                data={resultadoBusca.dataCriacao}
             />
         </ScrollView>       
     )}

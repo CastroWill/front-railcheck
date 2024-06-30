@@ -4,7 +4,7 @@ import { Usuario } from "../interfaces/usuario";
 export async function cadastrarUsuario(usuario: Usuario){
     if(!usuario) return null;
     try{
-        const resultado = await api.post('/rota', usuario)
+        const resultado = await api.post('/user-service/user', usuario)
         console.log (resultado.data)
         return resultado.data
     }
