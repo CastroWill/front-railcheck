@@ -69,7 +69,7 @@ export default function ModificarOS({navigation}){
             <VStack flex={1} w="100%" alignItems="flex-start"  p={3}>
             <EntradaTexto label="Data" placeholder={resultadoBusca.dataCriacao} value={data} onChangeText={setData} />
             <EntradaTexto label="Status" placeholder={resultadoBusca.status} value={status} onChangeText={setStatus} />
-            <EntradaTexto label="Descrição" placeholder={resultadoBusca.descricao} value={descricao} onChangeText={setDescricao}/> 
+            <EntradaTexto label="Descrição" placeholder={resultadoBusca.descricao} value={descricao} onChangeText={setDescricao}/>
             <Botao onPress={modificar}>Atualizar</Botao>
             </VStack>
         </ScrollView>       
