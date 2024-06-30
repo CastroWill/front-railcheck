@@ -1,35 +1,33 @@
-const secoesCadastroOrdemServico = [
+const secoesOrdemEntradaTexto = [
     {
       id: 1,
       entradaTexto: [
         {
           id: 1,
-          label: 'Nome',
-          placeholder: 'Digite seu nome completo',
+          label: 'ID',
+          placeholder: 'Digite o id da Ordem de Serviço',
           name: 'nome'
         },
         {
           id: 2,
-          label: 'Email',
-          placeholder: 'Digite seu email',
-          name: 'email'
+          label: 'Data',
+          placeholder: 'Digite a data de criação da ordem',
+          name: 'data'
         },
         {
           id: 3,
-          label: 'Crie uma senha',
-          placeholder: 'Insira sua senha',
-          secureTextEntry: true,
-          name: 'senha'
+          label: 'Status',
+          placeholder: 'Qual o status da ordem?',
+          name: 'status'
         },
         {
           id: 4,
-          label: 'Repita a senha',
-          placeholder: 'Insira sua senha',
-          secureTextEntry: true,
-          name: 'confirmaSenha'
+          label: 'Descrição',
+          placeholder: 'Insira a descrição da falha',
+          name: 'descricao'
         }
       ],
     }
 ]
 
-export {secoesCadastroOrdemServico as secoes}
+export {secoesOrdemEntradaTexto as secoesOrdem}

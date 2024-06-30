@@ -4,11 +4,10 @@ import { Titulo } from "./componentes/Titulo";
 import { EntradaTexto } from "./componentes/EntradaTexto";
 import { Botao } from "./componentes/Botao";
 import { useState } from "react";
-import { secoes } from "./utils/CadastroUsuarioEntradaTexto";
+import { secoesUsuario } from "./utils/CadastroUsuarioEntradaTexto";
 import { cadastrarUsuario } from "./servicos/UsuarioServico";
 
 export default function Cadastro({navigation}) {
-  const [numSecao, setNumSecao] = useState(0);
   const [dados, setDados] = useState({} as any)
   const toast = useToast() 
 
@@ -50,12 +49,12 @@ export default function Cadastro({navigation}) {
       alignSelf='center' />
 
       <Titulo fontSize="xl">
-        {secoes[numSecao].titulo}
+        {secoesUsuario[0].titulo}
       </Titulo>
     
       <Box>
         {
-          secoes[numSecao]?.entradaTexto?.map(entrada => {
+          secoesUsuario[0]?.entradaTexto?.map(entrada => {
             return (
               <EntradaTexto 
                 label={entrada.label}

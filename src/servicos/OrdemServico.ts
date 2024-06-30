@@ -37,3 +37,16 @@ export async function cadastrarOrdem(ordemDeServico: OrdemServico){
         return null
     }
 }
+
+export async function modificaOrdemPorId(id: string, ordemDeServico: OrdemServico){
+    try{
+        if(!ordemDeServico) return null
+        const resultado = await api.put(`/rota/${id}`)
+        console.log (resultado.data)
+        return resultado.data
+    }
+    catch(error){
+        console.log(error)
+        return null
+    }
+}

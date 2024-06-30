@@ -1,36 +1,36 @@
-const secoesCadastroUsuario = [
+const secoesUsuarioTexto = [
     {
       id: 1,
       titulo: 'Insira alguns dados básicos',
       entradaTexto: [
         {
           id: 1,
-          label: 'ID',
-          placeholder: 'Digite o id da Ordem de Serviço',
+          label: 'Nome',
+          placeholder: 'Digite seu nome completo',
           name: 'nome'
         },
         {
           id: 2,
-          label: 'Data',
-          placeholder: 'Digite a data de criação da ordem',
-          name: 'data'
+          label: 'Email',
+          placeholder: 'Digite seu email',
+          name: 'email'
         },
         {
           id: 3,
-          label: 'Status',
-          placeholder: 'Qual o status da ordem?',
+          label: 'Crie uma senha',
+          placeholder: 'Insira sua senha',
           secureTextEntry: true,
-          name: 'status'
+          name: 'senha'
         },
         {
           id: 4,
-          label: 'Descrição',
-          placeholder: 'Insira a descrição da falha',
+          label: 'Repita a senha',
+          placeholder: 'Insira sua senha',
           secureTextEntry: true,
-          name: 'descricao'
+          name: 'confirmaSenha'
         }
       ],
     }
 ]
 
-export {secoesCadastroUsuario as secoes}
+export {secoesUsuarioTexto as secoesUsuario}

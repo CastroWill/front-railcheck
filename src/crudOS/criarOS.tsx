@@ -2,11 +2,10 @@ import { Image, Box, Checkbox, ScrollView, useToast} from "native-base";
 import { EntradaTexto } from "../componentes/EntradaTexto";
 import { Botao } from "../componentes/Botao";
 import { useState } from "react";
-import { secoes } from "../utils/CadastroUsuarioEntradaTexto";
+import { secoesOrdem } from "../utils/CadastroOrdemEntradaTexto";
 import { cadastrarOrdem } from "../servicos/OrdemServico";
 
-export default function Cadastro({navigation}) {
-  const [numSecao, setNumSecao] = useState(0);
+export default function CriarOS({navigation}) {
   const [dados, setDados] = useState({} as any)
   const toast = useToast() 
 
@@ -21,7 +20,6 @@ export default function Cadastro({navigation}) {
 
   async function cadastrar() {
     const resultado = await cadastrarOrdem({
-      nome: dados.nome,
       data: dados.data,
       status: dados.status,
       descricao: dados.descricao
@@ -45,13 +43,12 @@ export default function Cadastro({navigation}) {
     <ScrollView flex={1} p={5}>  
         <Box>
             {
-            secoes[numSecao]?.entradaTexto?.map(entrada => {
+            secoesOrdem[0]?.entradaTexto?.map(entrada => {
                 return (
                 <EntradaTexto 
                     label={entrada.label}
                     placeholder={entrada.placeholder} 
                     key={entrada.id}
-                    secureTextEntry={entrada.secureTextEntry}
                     value={dados[entrada.name]}
                     onChangeText={(text => atualizarDados(entrada.name, text))}
                 />)
